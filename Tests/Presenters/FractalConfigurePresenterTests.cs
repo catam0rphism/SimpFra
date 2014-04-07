@@ -13,6 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject;
 using FluentAssertions;
 
 namespace Tests.Presenters
@@ -32,12 +33,13 @@ namespace Tests.Presenters
             // Заменить на конструктор
             fract.Iteration = 1;
 
-            presenter = new FractalConfigurePresenter(
-                view,
-                fract,
-                new ComplexPlaneConfigurePresenter(
-                    cpcView,
-                    new ComplexPlane(0.5, 100, 200, Complex.Zero)));
+            IKernel appKernel = new StandardKernel();
+
+            appKernel.Bind<IComplexPlaneConfigureView>().ToConstant(cpcView);
+            appKernel.Bind<IComplexFractalConfigureView>().ToConstant(view);
+            appKernel.Bind<IComplexFractal>().ToConstant(fract);
+
+            presenter = appKernel.Get<FractalConfigurePresenter>();
         }
 
         [Test]
@@ -48,6 +50,7 @@ namespace Tests.Presenters
             
             // Act
             view.IterationChanged += Raise.EventWith(EventArgs.Empty);
+
 
             // Assert
             Assert.AreEqual(42, presenter.fract.Iteration);

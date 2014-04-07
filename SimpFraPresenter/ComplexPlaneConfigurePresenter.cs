@@ -11,19 +11,24 @@ namespace SimpFraPresenter
 {
     public class ComplexPlaneConfigurePresenter
     {
-        [Ninject.Inject]
-        public IComplexPlaneConfigureView view { get; set; }
-        public ComplexPlane complexPlane { get; set; }
-        public ComplexPlaneConfigurePresenter(IComplexPlaneConfigureView View, ComplexPlane complexPlane)
-        {
-            this.complexPlane = complexPlane;
-            view = View;
 
-            view.CenterChanged += view_CenterChanged;
-            view.DifferenceChanged+=view_DifferenceChanged;
-            view.WidthChanged+=view_WidthChanged;
-            view.HeightChanged+=view_HeightChanged;
+        IComplexPlaneConfigureView _view = null;        
+        [Ninject.Inject]
+        public IComplexPlaneConfigureView view
+        {
+            get { return _view; }
+            set
+            {
+                value.CenterChanged += view_CenterChanged;
+                value.DifferenceChanged += view_DifferenceChanged;
+                value.WidthChanged += view_WidthChanged;
+                value.HeightChanged += view_HeightChanged;
+                _view = value;
+            }
         }
+        [Ninject.Inject]
+        public ComplexPlane complexPlane { get; set; }
+        public ComplexPlaneConfigurePresenter() { }
 
         #region view events
         // Handle view events is setting model property

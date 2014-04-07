@@ -11,6 +11,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject;
+using FluentAssertions;
+using FluentAssertions.Numeric;
 
 namespace Tests
 {
@@ -20,13 +23,18 @@ namespace Tests
         ComplexPlaneConfigurePresenter presenter;
 
         IComplexPlaneConfigureView view = NSubstitute.Substitute.For<IComplexPlaneConfigureView>();
+        ComplexPlane cp = new ComplexPlane(0.003,333,999,Complex.Zero);
+        // ComplexPlane cp = Substitute.For<ComplexPlane>();
 
         [SetUp]
         public void Init()
         {
-            presenter = new ComplexPlaneConfigurePresenter(
-                view,
-                new ComplexPlane(new Complex(1,1), 100, 100, Complex.Zero));
+            IKernel appKernel = new StandardKernel();
+
+            appKernel.Bind<IComplexPlaneConfigureView>().ToConstant(view);
+            appKernel.Bind<ComplexPlane>().ToConstant(cp).InSingletonScope();
+
+            presenter = appKernel.Get<ComplexPlaneConfigurePresenter>();
         }
 
         #region Center tests
@@ -79,8 +87,8 @@ namespace Tests
             view.DifferenceChanged += Raise.EventWith(EventArgs.Empty);
 
             // Assert
-            Assert.LessOrEqual(2, presenter.complexPlane.Diff.Real);
-            Assert.LessOrEqual(4, presenter.complexPlane.Diff.Imaginary);
+            presenter.complexPlane.Diff.Real.Should().BeGreaterOrEqualTo(2);
+            presenter.complexPlane.Diff.Imaginary.Should().BeGreaterOrEqualTo(4);    
         }
         [TestCaseSource("GetInvalidComplexValue")]
         public void not_sync_difference_with_invalid_view_value(Complex invalidValue)

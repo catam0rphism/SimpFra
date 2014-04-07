@@ -12,23 +12,27 @@ namespace SimpFraPresenter
     public class FractalConfigurePresenter
     {
         [Ninject.Inject]
-        public IComplexFractalConfigureView view { get; set; }
+        public IComplexFractalConfigureView view
+        {
+            get
+            {
+                return _view;                
+            }
+            set
+            {
+                _view = value;
+                _view.IterationChanged += view_IterationChanged;
+            }
+        }
+        private IComplexFractalConfigureView _view = null;
 
+        [Ninject.Inject]
         public IComplexFractal fract { get; set; }
 
+        [Ninject.Inject]
         public ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter { get; set; }
 
-        public FractalConfigurePresenter(
-            IComplexFractalConfigureView view,
-            IComplexFractal fract,
-            ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter)
-        {
-            this.view = view;
-            this.fract = fract;
-            this.complexPlaneConfigurePresenter = complexPlaneConfigurePresenter;
-
-            view.IterationChanged += view_IterationChanged;
-        }
+        public FractalConfigurePresenter() { }
 
         void view_IterationChanged(object sender, EventArgs e)
         {
