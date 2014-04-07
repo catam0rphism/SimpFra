@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HRUC.Math;
 using SimpFraUI.Interfaces;
-using HRUC.Math;
+using System;
 using System.Numerics;
 
 namespace SimpFraPresenter
@@ -19,11 +15,11 @@ namespace SimpFraPresenter
             get { return _view; }
             set
             {
-                value.CenterChanged += view_CenterChanged;
-                value.DifferenceChanged += view_DifferenceChanged;
-                value.WidthChanged += view_WidthChanged;
-                value.HeightChanged += view_HeightChanged;
                 _view = value;
+                _view.CenterChanged += view_CenterChanged;
+                _view.DifferenceChanged += view_DifferenceChanged;
+                _view.WidthChanged += view_WidthChanged;
+                _view.HeightChanged += view_HeightChanged;
             }
         }
         [Ninject.Inject]

@@ -19,13 +19,13 @@ namespace SimpFra
         [STAThread]
         static void Main()
         {
-            IKernel appLKernel = new StandardKernel();
+            IKernel appKernel = new StandardKernel();
 
-            appLKernel.Bind<IComplexFractalConfigureView>().To<FractalConfigureView>().InSingletonScope();
-            appLKernel.Bind<IComplexPlaneConfigureView>().To<ComplexPlaneConfigureView>().InSingletonScope();
-            appLKernel.Bind<IComplexFractal>().To<MandelbrotFractal>();
+            appKernel.Bind<IComplexFractalConfigureView>().To<FractalConfigureView>().InSingletonScope();
+            appKernel.Bind<IComplexPlaneConfigureView>().To<ComplexPlaneConfigureView>().InSingletonScope();
+            appKernel.Bind<IComplexFractal>().To<MandelbrotFractal>();
 
-            FractalConfigurePresenter presenter = appLKernel.Get<FractalConfigurePresenter>();
+            FractalConfigurePresenter presenter = appKernel.Get<FractalConfigurePresenter>();
 
             Application.Run(presenter.view as Form);
         }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimpFra;
 using SimpFraUI.Interfaces;
-using HRUC.Math;
-using SimpFra;
+using System;
 
 namespace SimpFraPresenter
 {

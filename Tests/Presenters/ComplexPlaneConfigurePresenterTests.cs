@@ -1,19 +1,14 @@
-﻿using HRUC.Math;
+﻿using FluentAssertions;
+using HRUC.Math;
+using Ninject;
 using NSubstitute;
 using NUnit.Core;
 using NUnit.Framework;
 using SimpFraPresenter;
 using SimpFraUI.Interfaces;
-using SimpFraUI.Views;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject;
-using FluentAssertions;
-using FluentAssertions.Numeric;
 
 namespace Tests
 {

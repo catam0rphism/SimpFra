@@ -1,20 +1,12 @@
-﻿using HRUC.Math;
+﻿using FluentAssertions;
+using Ninject;
 using NSubstitute;
 using NUnit.Core;
 using NUnit.Framework;
 using SimpFra;
-using SimpFra.Fractals;
 using SimpFraPresenter;
 using SimpFraUI.Interfaces;
-using SimpFraUI.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject;
-using FluentAssertions;
 
 namespace Tests.Presenters
 {
