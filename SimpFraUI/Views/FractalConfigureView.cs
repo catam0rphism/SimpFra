@@ -16,6 +16,14 @@ namespace SimpFraUI.Views
         public FractalConfigureView()
         {
             InitializeComponent();
+            ibIter.TextChanged += (s, ea) =>
+                {
+                    EventHandler temp = IterationChanged;
+                    if (temp != null)
+                    {
+                        temp(s, ea);
+                    }
+                };
         }
                 
         private void button1_Click(object sender, EventArgs e)
@@ -31,11 +39,16 @@ namespace SimpFraUI.Views
         {
             get
             {
-                throw new NotImplementedException();
+                return ibIter.ValueInt;
             }
             set
             {
-                throw new NotImplementedException();
+                ibIter.ValueInt = value;
+                EventHandler temp = IterationChanged;
+                if (temp != null)
+                {
+                    temp(this,EventArgs.Empty);
+                }
             }
         }
         public event EventHandler IterationChanged;

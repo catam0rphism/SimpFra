@@ -18,6 +18,60 @@ namespace SimpFraUI.Views
         public ComplexPlaneConfigureView()
         {
             InitializeComponent();
+            #region Invoke events
+            // CenterChanged
+            ibCIm.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = CenterChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            ibCRe.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = CenterChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            // DifferenceChanged
+            ibDIm.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = DifferenceChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            ibDRe.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = DifferenceChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            // WidthChanged
+            ibW.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = WidthChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            // HeightChanged
+            ibH.TextChanged += (s, ea) =>
+            {
+                EventHandler temp = HeightChanged;
+                if (temp != null)
+                {
+                    temp(s, ea);
+                }
+            };
+            #endregion
         }
 
         #region IComplexPlaneConfigureView
