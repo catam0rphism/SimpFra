@@ -19,7 +19,7 @@ namespace SimpFra
     }
     public interface IColorizedFractal<T>
     {
-        Func<T, Color> ColorizeFunc { get; set; }
+        Color Colorize(T i);
     }
     public interface IFractalAsync
         : IFractal

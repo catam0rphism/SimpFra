@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace SimpFra.Fractals
 {
     public class MandelbrotFractal
-        :IComplexFractal,IColorizedFractal<int>
+        : IComplexFractal, IColorizedFractal<int>
     {
         public MandelbrotFractal()
         {
@@ -31,7 +31,7 @@ namespace SimpFra.Fractals
         public int Iteration { get; set; }
         public HRUC.Math.ComplexPlane complexPlane { get; set; }
 
-        private Func<Complex,Complex, Complex> mFunc = (z, c) => z * z + c;
+        private Func<Complex, Complex, Complex> mFunc = (z, c) => z * z + c;
         private Func<Complex, int> gFunc = null;
         public Func<Complex, int> GeneratingFunc
         {
@@ -67,7 +67,7 @@ namespace SimpFra.Fractals
                 for (int j = 0; j < complexPlane.Height; j++)
                 {
                     sImg.SetPixel(i, j,
-                        ColorizeFunc(GeneratingFunc(complexPlane[i, j])));
+                        Colorize(GeneratingFunc(complexPlane[i, j])));
                 }
             }
 
@@ -75,16 +75,10 @@ namespace SimpFra.Fractals
             return sImg.Image;
         }
 
-        public Func<int, Color> ColorizeFunc
+        public Color Colorize(int i)
         {
-            get
-            {
-                return i => Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            return Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
         }
+
     }
 }

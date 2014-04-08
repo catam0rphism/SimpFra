@@ -17,8 +17,16 @@ namespace SimpFraPresenter
             {
                 _view = value;
                 _view.IterationChanged += view_IterationChanged;
+                _view.RenderClicked += view_RenderClicked;
             }
         }
+
+        void view_RenderClicked(object sender, EventArgs e)
+        {
+            global::System.Windows.Forms.MessageBox.Show(
+                complexPlaneConfigurePresenter.complexPlane.ToString());
+        }
+
         private IComplexFractalConfigureView _view = null;
 
         [Ninject.Inject]
