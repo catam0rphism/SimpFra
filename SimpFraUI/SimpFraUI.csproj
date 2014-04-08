@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\FractalMovingEventArgs.cs" />
     <Compile Include="Interfaces\IComplexPlaneConfigureView.cs" />
     <Compile Include="Interfaces\IFractalConfigureView.cs" />
     <Compile Include="Interfaces\IFractalPanelView.cs" />
@@ -65,6 +66,12 @@
     <Compile Include="Views\FractalConfigureView.Designer.cs">
       <DependentUpon>FractalConfigureView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FractalPanelView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\FractalPanelView.Designer.cs">
+      <DependentUpon>FractalPanelView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -79,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FractalConfigureView.resx">
       <DependentUpon>FractalConfigureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FractalPanelView.resx">
+      <DependentUpon>FractalPanelView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

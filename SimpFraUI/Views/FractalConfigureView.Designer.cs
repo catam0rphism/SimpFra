@@ -30,10 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FractalConfigureView));
             this.button1 = new System.Windows.Forms.Button();
-            this.complexPlaneConfigureView1 = new SimpFraUI.Views.ComplexPlaneConfigureView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibIter = new HRUC.Components.InputBox();
+            this.complexPlaneConfigureView = new SimpFraUI.Views.ComplexPlaneConfigureView();
+            this.fractalPanelView1 = new SimpFraUI.Views.FractalPanelView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fractalPanelView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -46,17 +48,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // complexPlaneConfigureView1
-            // 
-            this.complexPlaneConfigureView1.Center = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView1.Center")));
-            this.complexPlaneConfigureView1.Difference = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView1.Difference")));
-            this.complexPlaneConfigureView1.Height = null;
-            this.complexPlaneConfigureView1.Location = new System.Drawing.Point(12, 12);
-            this.complexPlaneConfigureView1.Name = "complexPlaneConfigureView1";
-            this.complexPlaneConfigureView1.Size = new System.Drawing.Size(200, 176);
-            this.complexPlaneConfigureView1.TabIndex = 2;
-            this.complexPlaneConfigureView1.Width = null;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -66,11 +57,11 @@
             this.panel1.Size = new System.Drawing.Size(199, 29);
             this.panel1.TabIndex = 3;
             // 
-            // inputBox1
+            // ibIter
             // 
             this.ibIter.LabelText = "Iteration";
             this.ibIter.Location = new System.Drawing.Point(3, 3);
-            this.ibIter.Name = "inputBox1";
+            this.ibIter.Name = "ibIter";
             this.ibIter.Size = new System.Drawing.Size(191, 20);
             this.ibIter.TabIndex = 0;
             this.ibIter.TextBoxWidth = 140;
@@ -78,17 +69,38 @@
             this.ibIter.ValueInt = null;
             this.ibIter.ValueString = "";
             // 
+            // complexPlaneConfigureView
+            // 
+            this.complexPlaneConfigureView.Center = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView.Center")));
+            this.complexPlaneConfigureView.Difference = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView.Difference")));
+            this.complexPlaneConfigureView.Height = null;
+            this.complexPlaneConfigureView.Location = new System.Drawing.Point(12, 12);
+            this.complexPlaneConfigureView.Name = "complexPlaneConfigureView";
+            this.complexPlaneConfigureView.Size = new System.Drawing.Size(200, 176);
+            this.complexPlaneConfigureView.TabIndex = 2;
+            this.complexPlaneConfigureView.Width = null;
+            // 
+            // fractalPanelView1
+            // 
+            this.fractalPanelView1.Location = new System.Drawing.Point(218, 12);
+            this.fractalPanelView1.Name = "fractalPanelView1";
+            this.fractalPanelView1.Size = new System.Drawing.Size(240, 211);
+            this.fractalPanelView1.TabIndex = 4;
+            this.fractalPanelView1.TabStop = false;
+            // 
             // FractalConfigureView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(225, 298);
+            this.ClientSize = new System.Drawing.Size(638, 298);
+            this.Controls.Add(this.fractalPanelView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.complexPlaneConfigureView1);
+            this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.button1);
             this.Name = "FractalConfigureView";
             this.Text = "FractalConfigureForm";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fractalPanelView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,8 +108,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private ComplexPlaneConfigureView complexPlaneConfigureView1;
         private System.Windows.Forms.Panel panel1;
         private HRUC.Components.InputBox ibIter;
+        public ComplexPlaneConfigureView complexPlaneConfigureView;
+        private FractalPanelView fractalPanelView1;
     }
 }

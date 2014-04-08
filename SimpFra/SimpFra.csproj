@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FractalMovingEventArgs.cs" />
     <Compile Include="Fractals\MandelbrotFractal.cs" />
     <Compile Include="Fractals\TestFractal.cs" />
     <Compile Include="TFractalEventArgs.cs" />
