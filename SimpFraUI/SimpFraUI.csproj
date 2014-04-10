@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\FractalMovingEventArgs.cs" />
+    <Compile Include="FractalMovingEventArgs.cs" />
     <Compile Include="Interfaces\IComplexPlaneConfigureView.cs" />
     <Compile Include="Interfaces\IFractalConfigureView.cs" />
     <Compile Include="Interfaces\IFractalPanelView.cs" />
