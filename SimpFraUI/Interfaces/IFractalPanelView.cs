@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpFra;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,5 +16,7 @@ namespace SimpFraUI.Interfaces
         
         // TODO: Fractal moving events
         event EventHandler<FractalMovingEventArgs> Moved;
+        event EventHandler<FractalMovingEventArgs> CenterSetted;
+
     }
 }
