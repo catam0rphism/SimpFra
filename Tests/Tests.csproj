@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="Presenters\ComplexPlaneConfigurePresenterTests.cs" />
     <Compile Include="Presenters\FractalConfigurePresenterTests.cs" />
+    <Compile Include="Presenters\FractalPanelPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

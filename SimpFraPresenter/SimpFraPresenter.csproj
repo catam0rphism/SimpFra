@@ -45,6 +45,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FractalConfigurePresenter.cs" />
+    <Compile Include="FractalPanelPresenter.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
