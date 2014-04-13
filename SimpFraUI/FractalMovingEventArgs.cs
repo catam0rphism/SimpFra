@@ -8,17 +8,17 @@ namespace SimpFra
 {
     public class FractalMovingEventArgs : EventArgs
     {
-        SizeF shift;
-        PointF center;
+        Size shift;
+        Point center;
 
-        public SizeF Shift
+        public Size Shift
         {
             get
             {
                 return shift;
             }
         }
-        public PointF Center
+        public Point Center
         {
             get
             {
