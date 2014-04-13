@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace Tests
+namespace Tests.Presenters
 {
     [TestFixture]
     public class ComplexPlaneConfigurePresenterTests

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpFraUI.Interfaces
 {
-    interface IFractalPanelView
+    public interface IFractalPanelView
         :IView<SimpFra.IComplexFractal>
     {
         Bitmap FractalImage { get; set; }
