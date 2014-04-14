@@ -11,7 +11,7 @@ namespace SimpFra
         Bitmap Render();
     }
     public interface IComplexFractal
-        :IFractal
+        :IFractalAsync
     {
         int Iteration { get; set; }
         ComplexPlane complexPlane { get; set; }

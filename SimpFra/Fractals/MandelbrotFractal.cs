@@ -80,5 +80,10 @@ namespace SimpFra.Fractals
             return Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
         }
 
+
+        public Task<Bitmap> RenderAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
