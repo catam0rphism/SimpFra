@@ -10,20 +10,10 @@ namespace SimpFra
     {
         Size shift;
         Point center;
+        Size size;
 
-        public Size Shift
-        {
-            get
-            {
-                return shift;
-            }
-        }
-        public Point Center
-        {
-            get
-            {
-                return center;
-            }
-        }
+        public Size Shift { get { return shift; } }
+        public Point Center { get { return center; } }
+        public Size Size { get { return size; } }
     }
 }
