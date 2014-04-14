@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using HRUC.Math;
 using SimpFraUI.Interfaces;
 using System.Drawing;
+using SimpFra;
 
 namespace SimpFraPresenter
 {
     public class FractalPanelPresenter
     {
+        public IFractalAsync Fractal { get; set; }
+
         IFractalPanelView _view;
         IFractalPanelView view
         {
@@ -24,13 +27,12 @@ namespace SimpFraPresenter
             }
         }
 
-        public async void Render(Task<Bitmap> RenderTask)
+        public async void RenderAsync()
         {
 #warning Check timer!
             System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
-            view.FractalImage = await RenderTask;
+            view.FractalImage = await Fractal.RenderAsync();
             sw.Stop();
-
             _view.RenderTime = sw.Elapsed;
         }
     }

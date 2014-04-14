@@ -18,20 +18,22 @@ namespace Tests.Presenters
     {
         IComplexFractalConfigureView cfcview = Substitute.For<IComplexFractalConfigureView>();
         IFractalPanelView view = Substitute.For<IFractalPanelView>();
+        IComplexFractal fract = Substitute.For<IComplexFractal>();
 
         FractalPanelPresenter presenter = null;
 
         [SetUp]
         public void Init()
         {
-            var fract = Substitute.For<IComplexFractal>();
+
 
             IKernel kernel = new StandardKernel();
 
+            kernel.Bind<IFractalPanelView>().ToConstant(view);
             kernel.Bind<IComplexFractalConfigureView>().ToConstant(cfcview);
             kernel.Bind<IComplexFractal>().ToConstant(fract);
 
             presenter = kernel.Get<FractalPanelPresenter>();
-        }
+        }      
     }
 }

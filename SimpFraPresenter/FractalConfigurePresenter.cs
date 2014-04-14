@@ -6,6 +6,16 @@ namespace SimpFraPresenter
 {
     public class FractalConfigurePresenter
     {
+        private IComplexFractalConfigureView _view = null;
+
+        [Ninject.Inject]
+        public IComplexFractal fract { get; set; }
+
+        [Ninject.Inject]
+        public ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter { get; set; }
+        [Ninject.Inject]
+        public FractalPanelPresenter fractalPanelPresenter { get; set; }
+
         [Ninject.Inject]
         public IComplexFractalConfigureView view
         {
@@ -26,20 +36,9 @@ namespace SimpFraPresenter
             var cp = complexPlaneConfigurePresenter.complexPlane;
             fract.complexPlane = cp;
 
-            var tasl = fract.RenderAsync();
-            fractalPanelPresenter.Render(tasl);
+            fractalPanelPresenter.Fractal = fract;
+            fractalPanelPresenter.RenderAsync();
         }
-
-        private IComplexFractalConfigureView _view = null;
-
-        [Ninject.Inject]
-        public IComplexFractal fract { get; set; }
-
-        [Ninject.Inject]
-        public ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter { get; set; }
-        [Ninject.Inject]
-        public FractalPanelPresenter fractalPanelPresenter { get; set; }
-
         void view_IterationChanged(object sender, EventArgs e)
         {
             if(view.Iteration.HasValue && view.Iteration>0) fract.Iteration = view.Iteration.Value;

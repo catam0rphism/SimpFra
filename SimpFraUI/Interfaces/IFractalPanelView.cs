@@ -13,7 +13,7 @@ namespace SimpFraUI.Interfaces
     {
         Bitmap FractalImage { get; set; }
         TimeSpan RenderTime { get; set; }
-        
+
         // TODO: Fractal moving events
         event EventHandler<FractalMovingEventArgs> Moved;
         event EventHandler<FractalMovingEventArgs> CenterSetted;
