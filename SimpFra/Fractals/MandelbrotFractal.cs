@@ -83,7 +83,7 @@ namespace SimpFra.Fractals
 
         public Task<Bitmap> RenderAsync()
         {
-            throw new NotImplementedException();
+            return new Task<Bitmap>(Render);
         }
     }
 }
