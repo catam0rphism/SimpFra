@@ -67,7 +67,7 @@
       <DependentUpon>FractalConfigureView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FractalPanelView.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\FractalPanelView.Designer.cs">
       <DependentUpon>FractalPanelView.cs</DependentUpon>

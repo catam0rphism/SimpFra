@@ -11,8 +11,8 @@ namespace SimpFraUI.Interfaces
     public interface IFractalPanelView
         :IView<SimpFra.IComplexFractal>
     {
-        Bitmap FractalImage { get; set; }
-        TimeSpan RenderTime { get; set; }
+        Bitmap FractalImage { set; }
+        TimeSpan RenderTime { set; }
 
         // TODO: Fractal moving events
         
