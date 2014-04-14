@@ -26,6 +26,7 @@ namespace SimpFraPresenter
 
         public async void Render(Task<Bitmap> RenderTask)
         {
+#warning Check timer!
             System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
             view.FractalImage = await RenderTask;
             sw.Stop();
