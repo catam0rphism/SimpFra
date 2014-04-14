@@ -33,9 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibIter = new HRUC.Components.InputBox();
             this.complexPlaneConfigureView = new SimpFraUI.Views.ComplexPlaneConfigureView();
-            this.fractalPanelView1 = new SimpFraUI.Views.FractalPanelView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fractalPanelView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -80,27 +78,17 @@
             this.complexPlaneConfigureView.TabIndex = 2;
             this.complexPlaneConfigureView.Width = null;
             // 
-            // fractalPanelView1
-            // 
-            this.fractalPanelView1.Location = new System.Drawing.Point(218, 12);
-            this.fractalPanelView1.Name = "fractalPanelView1";
-            this.fractalPanelView1.Size = new System.Drawing.Size(240, 211);
-            this.fractalPanelView1.TabIndex = 4;
-            this.fractalPanelView1.TabStop = false;
-            // 
             // FractalConfigureView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 298);
-            this.Controls.Add(this.fractalPanelView1);
+            this.ClientSize = new System.Drawing.Size(561, 301);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.button1);
             this.Name = "FractalConfigureView";
             this.Text = "FractalConfigureForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fractalPanelView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,6 +99,5 @@
         private System.Windows.Forms.Panel panel1;
         private HRUC.Components.InputBox ibIter;
         public ComplexPlaneConfigureView complexPlaneConfigureView;
-        private FractalPanelView fractalPanelView1;
     }
 }
