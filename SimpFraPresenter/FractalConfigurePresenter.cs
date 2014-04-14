@@ -23,8 +23,11 @@ namespace SimpFraPresenter
 
         void view_RenderClicked(object sender, EventArgs e)
         {
-            global::System.Windows.Forms.MessageBox.Show(
-                complexPlaneConfigurePresenter.complexPlane.ToString());
+            var cp = complexPlaneConfigurePresenter.complexPlane;
+            fract.complexPlane = cp;
+
+            var tasl = fract.RenderAsync();
+            fractalPanelPresenter.Render(tasl);
         }
 
         private IComplexFractalConfigureView _view = null;
@@ -34,8 +37,8 @@ namespace SimpFraPresenter
 
         [Ninject.Inject]
         public ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter { get; set; }
-
-        public FractalConfigurePresenter() { }
+        [Ninject.Inject]
+        public FractalPanelPresenter fractalPanelPresenter { get; set; }
 
         void view_IterationChanged(object sender, EventArgs e)
         {
