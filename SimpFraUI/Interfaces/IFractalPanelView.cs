@@ -15,8 +15,11 @@ namespace SimpFraUI.Interfaces
         TimeSpan RenderTime { get; set; }
 
         // TODO: Fractal moving events
-        event EventHandler<FractalMovingEventArgs> Moved;
-        event EventHandler<FractalMovingEventArgs> CenterSetted;
+        
+        //event EventHandler<FractalMovingEventArgs> Moved;
+        //event EventHandler<FractalMovingEventArgs> CenterSetted;
+        //event EventHandler<FractalMovingEventArgs> ZomeIn;
+        //event EventHandler<FractalMovingEventArgs> ZomeOut;
 
     }
 }
