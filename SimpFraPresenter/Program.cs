@@ -23,9 +23,12 @@ namespace SimpFra
 
             FractalConfigureView mainView = new FractalConfigureView();
 
-            appKernel.Bind<IComplexFractal>().To<MandelbrotFractal>();
+            MandelbrotFractal mfr = new MandelbrotFractal();
+
+            appKernel.Bind<IComplexFractal>().ToConstant(mfr);
             appKernel.Bind<IComplexFractalConfigureView>().ToConstant(mainView);
             appKernel.Bind<IComplexPlaneConfigureView>().ToConstant(mainView.complexPlaneConfigureView);
+            appKernel.Bind<IFractalPanelView>().ToConstant(mainView.fractalPanelView);
 
             FractalConfigurePresenter presenter = appKernel.Get<FractalConfigurePresenter>();
 
