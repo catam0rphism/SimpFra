@@ -41,9 +41,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 293);
+            this.statusStrip.Location = new System.Drawing.Point(0, 180);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(455, 22);
+            this.statusStrip.Size = new System.Drawing.Size(270, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 293);
+            this.panel1.Size = new System.Drawing.Size(270, 180);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox
@@ -67,7 +67,7 @@
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(455, 293);
+            this.pictureBox.Size = new System.Drawing.Size(270, 180);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
@@ -78,7 +78,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
             this.Name = "FractalPanelView";
-            this.Size = new System.Drawing.Size(455, 315);
+            this.Size = new System.Drawing.Size(270, 202);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.panel1.ResumeLayout(false);

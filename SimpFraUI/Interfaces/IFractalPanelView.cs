@@ -11,6 +11,7 @@ namespace SimpFraUI.Interfaces
     public interface IFractalPanelView
         :IView<SimpFra.IComplexFractal>
     {
+        Size ImageSize { get; set; }
         Bitmap FractalImage { set; }
         TimeSpan RenderTime { set; }
 

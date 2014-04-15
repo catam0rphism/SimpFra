@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ibIter = new HRUC.Components.InputBox();
             this.complexPlaneConfigureView = new SimpFraUI.Views.ComplexPlaneConfigureView();
+            this.fractalPanelView = new SimpFraUI.Views.FractalPanelView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +79,19 @@
             this.complexPlaneConfigureView.TabIndex = 2;
             this.complexPlaneConfigureView.Width = null;
             // 
+            // fractalPanelView
+            // 
+            this.fractalPanelView.Location = new System.Drawing.Point(218, 12);
+            this.fractalPanelView.Name = "fractalPanelView";
+            this.fractalPanelView.Size = new System.Drawing.Size(331, 211);
+            this.fractalPanelView.TabIndex = 4;
+            // 
             // FractalConfigureView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 301);
+            this.Controls.Add(this.fractalPanelView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.button1);
@@ -99,5 +108,6 @@
         private System.Windows.Forms.Panel panel1;
         private HRUC.Components.InputBox ibIter;
         public ComplexPlaneConfigureView complexPlaneConfigureView;
+        public FractalPanelView fractalPanelView;
     }
 }

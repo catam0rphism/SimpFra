@@ -20,7 +20,7 @@ namespace SimpFraUI.Views
 
         public Bitmap FractalImage
         {
-            set { pictureBox.Image = value; }
+            set { pictureBox.Image = value.Clone() as Image; }
         }
 
         public TimeSpan RenderTime
@@ -28,6 +28,18 @@ namespace SimpFraUI.Views
             set
             {
                 toolStripStatusLabel.Text = "Render completed | " + value.Milliseconds.ToString() + "ms";
+            }
+        }
+
+        public Size ImageSize
+        {
+            get
+            {
+                return pictureBox.Size;
+            }
+            set
+            {
+                pictureBox.Size = value;
             }
         }
     }
