@@ -1,6 +1,7 @@
 ﻿using HRUC.Math;
 using System;
 using System.Drawing;
+using System.Numerics;
 using System.Threading.Tasks;
 
 namespace SimpFra
@@ -15,7 +16,7 @@ namespace SimpFra
     {
         int Iteration { get; set; }
         ComplexPlane complexPlane { get; set; }
-        Func<System.Numerics.Complex, int> GeneratingFunc { get; set; }
+        int Generate(Complex c);
     }
     public interface IColorizedFractal<T>
     {

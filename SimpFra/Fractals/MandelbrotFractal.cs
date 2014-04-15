@@ -11,39 +11,10 @@ namespace SimpFra.Fractals
     public class MandelbrotFractal
         : IComplexFractal, IColorizedFractal<int>
     {
-        public MandelbrotFractal()
-        {
-            Func<Complex, int> gFunc = c =>
-            {
-                int i = 0;
-                Complex z = Complex.Zero;
-                while (true)
-                {
-                    if (i == Iteration - 1 || Complex.Abs(z) >= 4)
-                        return i;
-
-                    i++;
-                    z = mFunc(z, c);
-                }
-            };
-        }
-
         public int Iteration { get; set; }
         public HRUC.Math.ComplexPlane complexPlane { get; set; }
 
         private Func<Complex, Complex, Complex> mFunc = (z, c) => z * z + c;
-        private Func<Complex, int> gFunc = null;
-        public Func<Complex, int> GeneratingFunc
-        {
-            get
-            {
-                return gFunc;
-            }
-            set
-            {
-                gFunc = value;
-            }
-        }
 
         public Size FractalSize
         {
@@ -67,7 +38,7 @@ namespace SimpFra.Fractals
                 for (int j = 0; j < complexPlane.Height; j++)
                 {
                     sImg.SetPixel(i, j,
-                        Colorize(GeneratingFunc(complexPlane[i, j])));
+                        Colorize(Generate(complexPlane[i, j])));
                 }
             }
 
@@ -78,6 +49,20 @@ namespace SimpFra.Fractals
         public Color Colorize(int i)
         {
             return Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
+        }
+
+        public int Generate(Complex c)
+        {
+            int i = 0;
+            Complex z = Complex.Zero;
+            while (true)
+            {
+                if (i == Iteration - 1 || Complex.Abs(z) >= 4)
+                    return i;
+
+                i++;
+                z = mFunc(z, c);
+            }
         }
 
 
