@@ -15,7 +15,8 @@ namespace SimpFraPresenter
         public IFractalAsync Fractal { get; set; }
 
         IFractalPanelView _view;
-        IFractalPanelView view
+        [Ninject.Inject]
+        public IFractalPanelView view
         {
             get
             {
@@ -34,6 +35,11 @@ namespace SimpFraPresenter
             view.FractalImage = await Fractal.RenderAsync();
             sw.Stop();
             _view.RenderTime = sw.Elapsed;
+        }
+
+        public void Render()
+        {
+            view.FractalImage = Fractal.Render();
         }
     }
 }

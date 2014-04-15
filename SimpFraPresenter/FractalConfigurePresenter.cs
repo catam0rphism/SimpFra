@@ -10,7 +10,6 @@ namespace SimpFraPresenter
 
         [Ninject.Inject]
         public IComplexFractal fract { get; set; }
-
         [Ninject.Inject]
         public ComplexPlaneConfigurePresenter complexPlaneConfigurePresenter { get; set; }
         [Ninject.Inject]
@@ -37,7 +36,7 @@ namespace SimpFraPresenter
             fract.complexPlane = cp;
 
             fractalPanelPresenter.Fractal = fract;
-            fractalPanelPresenter.RenderAsync();
+            fractalPanelPresenter.Render();
         }
         void view_IterationChanged(object sender, EventArgs e)
         {
