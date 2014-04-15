@@ -18,7 +18,6 @@ namespace SimpFraUI.Interfaces
         
         event EventHandler CenterChanged;
         event EventHandler DifferenceChanged;
-        event EventHandler WidthChanged;
-        event EventHandler HeightChanged;
+        event EventHandler SizeChanged;
     }
 }

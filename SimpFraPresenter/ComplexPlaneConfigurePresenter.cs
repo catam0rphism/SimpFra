@@ -18,23 +18,18 @@ namespace SimpFraPresenter
                 _view = value;
                 _view.CenterChanged += view_CenterChanged;
                 _view.DifferenceChanged += view_DifferenceChanged;
-                _view.WidthChanged += view_WidthChanged;
-                _view.HeightChanged += view_HeightChanged;
+                _view.SizeChanged += _view_SizeChanged;
             }
         }
+
         [Ninject.Inject]
         public ComplexPlane complexPlane { get; set; }
-        public ComplexPlaneConfigurePresenter() { }
 
         #region view events
         // Handle view events is setting model property
-        void view_HeightChanged(object sender, EventArgs e)
+        void _view_SizeChanged(object sender, EventArgs e)
         {
-            if (view.Height.HasValue && view.Height > 0) complexPlane = complexPlane.SetHeight(view.Height.Value);
-        }
-        void view_WidthChanged(object sender, EventArgs e)
-        {
-            if(view.Width.HasValue && view.Width > 0) complexPlane = complexPlane.SetWidth(view.Width.Value);
+            throw new NotImplementedException();
         }
         void view_DifferenceChanged(object sender, EventArgs e)
         {
