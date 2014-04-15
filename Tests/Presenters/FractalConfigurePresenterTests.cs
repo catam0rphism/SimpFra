@@ -15,6 +15,7 @@ namespace Tests.Presenters
     {
         IComplexPlaneConfigureView cpcView = Substitute.For<IComplexPlaneConfigureView>();
         IComplexFractalConfigureView view = Substitute.For<IComplexFractalConfigureView>();
+        IFractalPanelView fpview = Substitute.For<IFractalPanelView>();
 
         FractalConfigurePresenter presenter = null;
 
@@ -27,6 +28,7 @@ namespace Tests.Presenters
 
             IKernel appKernel = new StandardKernel();
 
+            appKernel.Bind<IFractalPanelView>().ToConstant(fpview);
             appKernel.Bind<IComplexPlaneConfigureView>().ToConstant(cpcView);
             appKernel.Bind<IComplexFractalConfigureView>().ToConstant(view);
             appKernel.Bind<IComplexFractal>().ToConstant(fract);
