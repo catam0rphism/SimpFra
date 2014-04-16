@@ -39,7 +39,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 263);
+            this.button1.Location = new System.Drawing.Point(12, 229);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -79,17 +79,20 @@
             // 
             // fractalPanelView
             // 
-            this.fractalPanelView.ImageSize = new System.Drawing.Size(331, 189);
+            this.fractalPanelView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fractalPanelView.ImageSize = new System.Drawing.Size(331, 213);
             this.fractalPanelView.Location = new System.Drawing.Point(218, 12);
             this.fractalPanelView.Name = "fractalPanelView";
-            this.fractalPanelView.Size = new System.Drawing.Size(331, 211);
+            this.fractalPanelView.Size = new System.Drawing.Size(331, 235);
             this.fractalPanelView.TabIndex = 4;
             // 
             // FractalConfigureView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 301);
+            this.ClientSize = new System.Drawing.Size(561, 259);
             this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.fractalPanelView);
             this.Controls.Add(this.panel1);
