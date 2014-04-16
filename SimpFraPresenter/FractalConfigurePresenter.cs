@@ -32,6 +32,7 @@ namespace SimpFraPresenter
 
         void view_RenderClicked(object sender, EventArgs e)
         {
+            if ((view.Iteration ?? 0) == 0) return; // Если число итераций есть и не равно 0 продолжаем)
 
             var cp = complexPlaneConfigurePresenter.complexPlane.Resize(fractalPanelPresenter.view.ImageSize);
             complexPlaneConfigurePresenter.complexPlane = cp;
