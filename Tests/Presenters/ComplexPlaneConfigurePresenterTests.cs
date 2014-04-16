@@ -110,6 +110,7 @@ namespace Tests.Presenters
             Assert.AreNotEqual(null, presenter.complexPlane.Diff);
         }
         #endregion
+#warning TODO: Fix tests
         #region width tests
         [Test]
         public void sync_width_with_valid_view_value()

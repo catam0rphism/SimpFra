@@ -72,15 +72,14 @@
             // 
             this.complexPlaneConfigureView.Center = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView.Center")));
             this.complexPlaneConfigureView.Difference = ((System.Nullable<System.Numerics.Complex>)(resources.GetObject("complexPlaneConfigureView.Difference")));
-            this.complexPlaneConfigureView.Height = null;
             this.complexPlaneConfigureView.Location = new System.Drawing.Point(12, 12);
             this.complexPlaneConfigureView.Name = "complexPlaneConfigureView";
             this.complexPlaneConfigureView.Size = new System.Drawing.Size(200, 176);
-            this.complexPlaneConfigureView.TabIndex = 2;
-            this.complexPlaneConfigureView.Width = null;
+            this.complexPlaneConfigureView.TabIndex = 5;
             // 
             // fractalPanelView
             // 
+            this.fractalPanelView.ImageSize = new System.Drawing.Size(331, 189);
             this.fractalPanelView.Location = new System.Drawing.Point(218, 12);
             this.fractalPanelView.Name = "fractalPanelView";
             this.fractalPanelView.Size = new System.Drawing.Size(331, 211);
@@ -91,9 +90,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 301);
+            this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.fractalPanelView);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.complexPlaneConfigureView);
             this.Controls.Add(this.button1);
             this.Name = "FractalConfigureView";
             this.Text = "FractalConfigureForm";
@@ -107,7 +106,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private HRUC.Components.InputBox ibIter;
-        public ComplexPlaneConfigureView complexPlaneConfigureView;
         public FractalPanelView fractalPanelView;
+        public ComplexPlaneConfigureView complexPlaneConfigureView;
     }
 }

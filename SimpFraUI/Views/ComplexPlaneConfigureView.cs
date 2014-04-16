@@ -53,19 +53,18 @@ namespace SimpFraUI.Views
                     temp(s, ea);
                 }
             };
-            // WidthChanged
+            // SizeChanged
             ibW.TextChanged += (s, ea) =>
             {
-                EventHandler temp = WidthChanged;
+                EventHandler temp = SizeChanged;
                 if (temp != null)
                 {
                     temp(s, ea);
                 }
             };
-            // HeightChanged
             ibH.TextChanged += (s, ea) =>
             {
-                EventHandler temp = HeightChanged;
+                EventHandler temp = SizeChanged;
                 if (temp != null)
                 {
                     temp(s, ea);
@@ -77,8 +76,7 @@ namespace SimpFraUI.Views
         #region IComplexPlaneConfigureView
         public event EventHandler CenterChanged;
         public event EventHandler DifferenceChanged;
-        public event EventHandler WidthChanged;
-        public event EventHandler HeightChanged;
+        public event EventHandler SizeChanged;
         
         public Complex? Center
         {
@@ -122,33 +120,26 @@ namespace SimpFraUI.Views
                 }
             }
         }
+        Size? IComplexPlaneConfigureView.Size
+        {
+            get
+            {
+                int w = ibW.ValueInt ?? 0,
+                    h = ibH.ValueInt ?? 0;
 
-        public new int? Width
-        {
-            get
-            {
-                return ibW.ValueInt;
+                if (w > 0 && h > 0)
+                    return new Size(w, h);
+                else return null;
             }
             set
             {
-                ibW.ValueInt = value;
-                EventHandler temp = WidthChanged;
-                if (temp != null)
+                if (value != null)
                 {
-                    temp(this,EventArgs.Empty);
+                    ibW.ValueInt = value.Value.Width;
+                    ibH.ValueInt = value.Value.Height;
                 }
-            }
-        }
-        public new int? Height
-        {
-            get
-            {
-                return ibH.ValueInt;
-            }
-            set
-            {
-                ibH.ValueInt = value;
-                EventHandler temp = HeightChanged;
+
+                EventHandler temp = SizeChanged;
                 if (temp != null)
                 {
                     temp(this,EventArgs.Empty);

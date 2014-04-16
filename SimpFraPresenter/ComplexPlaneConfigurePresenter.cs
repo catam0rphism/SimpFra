@@ -29,7 +29,8 @@ namespace SimpFraPresenter
         // Handle view events is setting model property
         void _view_SizeChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (view.Size.HasValue && Math.Min(view.Size.Value.Width, view.Size.Value.Height) > 0)
+                complexPlane = complexPlane.Resize(view.Size.Value.Width, view.Size.Value.Height);
         }
         void view_DifferenceChanged(object sender, EventArgs e)
         {

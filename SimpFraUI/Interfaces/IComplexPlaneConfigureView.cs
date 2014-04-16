@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HRUC.Math;
 using System.Numerics;
+using System.Drawing;
 
 namespace SimpFraUI.Interfaces
 {
@@ -13,8 +14,7 @@ namespace SimpFraUI.Interfaces
     {
         Complex? Center { get; set; }
         Complex? Difference { get; set; }
-        int? Width { get; set; }
-        int? Height { get; set; }
+        Size? Size { get; set; }
         
         event EventHandler CenterChanged;
         event EventHandler DifferenceChanged;
