@@ -19,57 +19,28 @@ namespace SimpFraUI.Views
         {
             InitializeComponent();
             #region Invoke events
+
+            Func<EventHandler,EventHandler> textChanged = eh =>
+                {
+                    return (s, ea) =>
+                    {
+                        EventHandler temp = eh;
+                        if (temp != null)
+                        {
+                            temp(s, ea);
+                        }
+                    };
+                };
+
             // CenterChanged
-            ibCIm.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = CenterChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
-            ibCRe.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = CenterChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
+            ibCIm.TextChanged += textChanged(CenterChanged);
+            ibCRe.TextChanged += textChanged(CenterChanged);
             // DifferenceChanged
-            ibDIm.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = DifferenceChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
-            ibDRe.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = DifferenceChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
+            ibDIm.TextChanged += textChanged(DifferenceChanged);
+            ibDRe.TextChanged += textChanged(DifferenceChanged);
             // SizeChanged
-            ibW.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = SizeChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
-            ibH.TextChanged += (s, ea) =>
-            {
-                EventHandler temp = SizeChanged;
-                if (temp != null)
-                {
-                    temp(s, ea);
-                }
-            };
+            ibW.TextChanged += textChanged(SizeChanged);
+            ibH.TextChanged += textChanged(SizeChanged);
             #endregion
         }
 
