@@ -30,13 +30,13 @@
         {
             this.ibCIm = new HRUC.Components.InputBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ibCRe = new HRUC.Components.InputBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ibDRe = new HRUC.Components.InputBox();
             this.ibDIm = new HRUC.Components.InputBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ibW = new HRUC.Components.InputBox();
             this.ibH = new HRUC.Components.InputBox();
-            this.ibCRe = new HRUC.Components.InputBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +64,18 @@
             this.panel1.Size = new System.Drawing.Size(200, 55);
             this.panel1.TabIndex = 4;
             // 
+            // ibCRe
+            // 
+            this.ibCRe.LabelText = "Center real:";
+            this.ibCRe.Location = new System.Drawing.Point(3, 3);
+            this.ibCRe.Name = "ibCRe";
+            this.ibCRe.Size = new System.Drawing.Size(194, 20);
+            this.ibCRe.TabIndex = 0;
+            this.ibCRe.TextBoxWidth = 100;
+            this.ibCRe.ValueDouble = double.NaN;
+            this.ibCRe.ValueInt = null;
+            this.ibCRe.ValueString = "";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -80,7 +92,7 @@
             this.ibDRe.Location = new System.Drawing.Point(3, 3);
             this.ibDRe.Name = "ibDRe";
             this.ibDRe.Size = new System.Drawing.Size(194, 20);
-            this.ibDRe.TabIndex = 5;
+            this.ibDRe.TabIndex = 2;
             this.ibDRe.TextBoxWidth = 100;
             this.ibDRe.ValueDouble = double.NaN;
             this.ibDRe.ValueInt = null;
@@ -92,7 +104,7 @@
             this.ibDIm.Location = new System.Drawing.Point(3, 29);
             this.ibDIm.Name = "ibDIm";
             this.ibDIm.Size = new System.Drawing.Size(194, 20);
-            this.ibDIm.TabIndex = 4;
+            this.ibDIm.TabIndex = 3;
             this.ibDIm.TextBoxWidth = 100;
             this.ibDIm.ValueDouble = double.NaN;
             this.ibDIm.ValueInt = null;
@@ -114,7 +126,7 @@
             this.ibW.Location = new System.Drawing.Point(3, 3);
             this.ibW.Name = "ibW";
             this.ibW.Size = new System.Drawing.Size(194, 20);
-            this.ibW.TabIndex = 5;
+            this.ibW.TabIndex = 4;
             this.ibW.TextBoxWidth = 140;
             this.ibW.ValueDouble = double.NaN;
             this.ibW.ValueInt = null;
@@ -126,23 +138,11 @@
             this.ibH.Location = new System.Drawing.Point(3, 29);
             this.ibH.Name = "ibH";
             this.ibH.Size = new System.Drawing.Size(194, 20);
-            this.ibH.TabIndex = 4;
+            this.ibH.TabIndex = 5;
             this.ibH.TextBoxWidth = 140;
             this.ibH.ValueDouble = double.NaN;
             this.ibH.ValueInt = null;
             this.ibH.ValueString = "";
-            // 
-            // ibCRe
-            // 
-            this.ibCRe.LabelText = "Center real:";
-            this.ibCRe.Location = new System.Drawing.Point(3, 3);
-            this.ibCRe.Name = "ibCRe";
-            this.ibCRe.Size = new System.Drawing.Size(194, 20);
-            this.ibCRe.TabIndex = 0;
-            this.ibCRe.TextBoxWidth = 100;
-            this.ibCRe.ValueDouble = double.NaN;
-            this.ibCRe.ValueInt = null;
-            this.ibCRe.ValueString = "";
             // 
             // ComplexPlaneConfigureView
             // 

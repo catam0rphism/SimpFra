@@ -42,7 +42,7 @@
             this.button1.Location = new System.Drawing.Point(12, 263);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -54,7 +54,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 194);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(199, 29);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 0;
             // 
             // ibIter
             // 
@@ -62,7 +62,7 @@
             this.ibIter.Location = new System.Drawing.Point(3, 3);
             this.ibIter.Name = "ibIter";
             this.ibIter.Size = new System.Drawing.Size(191, 20);
-            this.ibIter.TabIndex = 0;
+            this.ibIter.TabIndex = 1;
             this.ibIter.TextBoxWidth = 140;
             this.ibIter.ValueDouble = double.NaN;
             this.ibIter.ValueInt = null;
@@ -75,7 +75,7 @@
             this.complexPlaneConfigureView.Location = new System.Drawing.Point(12, 12);
             this.complexPlaneConfigureView.Name = "complexPlaneConfigureView";
             this.complexPlaneConfigureView.Size = new System.Drawing.Size(200, 176);
-            this.complexPlaneConfigureView.TabIndex = 5;
+            this.complexPlaneConfigureView.TabIndex = 0;
             // 
             // fractalPanelView
             // 
