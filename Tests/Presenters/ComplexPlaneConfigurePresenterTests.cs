@@ -126,7 +126,7 @@ namespace Tests.Presenters
             presenter.complexPlane.Height.Should().Be(valid_size.Height);
         }
         [TestCaseSource("GetInvalidSizeValue")]
-        public void not_sync_with_invalid_view_value(Size invalid_size)
+        public void not_sync_size_with_invalid_view_value(Size invalid_size)
         {
             // Arrange
             view.Size = invalid_size;
@@ -138,6 +138,19 @@ namespace Tests.Presenters
             presenter.complexPlane.Width.Should().NotBe(invalid_size.Width);
             presenter.complexPlane.Height.Should().NotBe(invalid_size.Height);
             
+        }
+        [Test]
+        public void not_sync_size_with_null_view_value()
+        {
+            // Arrange
+            view.Size = null;
+            presenter.complexPlane = presenter.complexPlane.Resize(42, 84);
+            // Act
+            view.SizeChanged += Raise.EventWith(EventArgs.Empty);
+
+            // Assert
+            presenter.complexPlane.Width.Should().Be(42);
+            presenter.complexPlane.Height.Should().Be(84);
         }
         #endregion
 
