@@ -8,6 +8,7 @@ using SimpFraPresenter;
 using SimpFraUI.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Numerics;
 
 namespace Tests.Presenters
@@ -110,105 +111,33 @@ namespace Tests.Presenters
             Assert.AreNotEqual(null, presenter.complexPlane.Diff);
         }
         #endregion
-#warning TODO: Fix tests
-        #region width tests
-        [Test]
-        public void sync_width_with_valid_view_value()
+        #region size tests
+        [TestCaseSource("GetValidSizeValue")]
+        public void sync_size_with_valid_view_value(Size valid_size)
         {
             // Arrange
-            view.Width = 42;
+            view.Size = valid_size;
 
             // Act
-            view.WidthChanged += Raise.EventWith(EventArgs.Empty);
+            view.SizeChanged += Raise.EventWith(EventArgs.Empty);
 
             // Assert
-            Assert.AreEqual(42, presenter.complexPlane.Width);
+            presenter.complexPlane.Width.Should().Be(valid_size.Width);
+            presenter.complexPlane.Height.Should().Be(valid_size.Height);
         }
-        [Test]
-        public void not_sync_width_with_negative_view_value()
+        [TestCaseSource("GetInvalidSizeValue")]
+        public void not_sync_with_invalid_view_value(Size invalid_size)
         {
             // Arrange
-            view.Width = -42;
+            view.Size = invalid_size;
 
             // Act
-            view.WidthChanged += Raise.EventWith(EventArgs.Empty);
+            view.SizeChanged += Raise.EventWith(EventArgs.Empty);
 
             // Assert
-            Assert.AreNotEqual(-42, presenter.complexPlane.Width);
-        }
-        [Test]
-        public void not_sync_width_with_zero_view_value()
-        {
-            // Arrange
-            view.Width = 0;
-
-            // Act
-            view.WidthChanged += Raise.EventWith(EventArgs.Empty);
-
-            // Assert
-            Assert.AreNotEqual(0, presenter.complexPlane.Width);
-        }
-        [Test]
-        public void not_sync_width_with_null_view_value()
-        {
-            // Arrange
-            view.Width = null;
-
-            // Act
-            view.WidthChanged += Raise.EventWith(EventArgs.Empty);
+            presenter.complexPlane.Width.Should().NotBe(invalid_size.Width);
+            presenter.complexPlane.Height.Should().NotBe(invalid_size.Height);
             
-            // Assert
-            Assert.AreNotEqual(null, presenter.complexPlane.Width);
-        }
-        #endregion
-        #region height tests
-        [Test]
-        public void sync_height_with_valid_view_value()
-        {
-            // Arrange
-            view.Height = 42;
-
-            // Act
-            view.HeightChanged += Raise.EventWith(EventArgs.Empty);
-
-            // Assert
-            Assert.AreEqual(42, presenter.complexPlane.Height);
-        }
-        [Test]
-        public void not_sync_height_with_negative_view_value()
-        {
-            // Arrange
-            view.Height = -42;
-
-            // Act
-            view.HeightChanged += Raise.EventWith(EventArgs.Empty);
-
-            // Assert
-            Assert.AreNotEqual(-42, presenter.complexPlane.Height);
-        }
-        [Test]
-        public void not_sync_height_with_zero_view_value()
-        {
-            // Arrange
-            view.Height = 0;
-
-            // Act
-            view.HeightChanged += Raise.EventWith(EventArgs.Empty);
-
-            // Assert
-            Assert.AreNotEqual(0, presenter.complexPlane.Height);
-        }
-        [Test]
-        public void not_sync_height_with_null_view_value()
-        {
-            // Arrange
-            view.Height = null;
-
-            // Act
-            view.HeightChanged += Raise.EventWith(EventArgs.Empty);
-
-            // Assert
-            Assert.AreNotEqual(null, presenter.complexPlane.Height);
         }
         #endregion
 
@@ -235,6 +164,22 @@ namespace Tests.Presenters
             yield return new TestCaseData(new Complex(double.NegativeInfinity,24));
 
             //yield return new TestCaseData(null);
+        }
+        IEnumerable<Size> GetValidSizeValue()
+        {
+            yield return new Size(10, 10);
+            yield return new Size(42, 84);
+            yield return new Size(84, 42);
+            yield return new Size(1024, 768);
+            yield return new Size(1600, 1200);
+        }
+        IEnumerable<Size> GetInvalidSizeValue()
+        {
+            yield return new Size(0, 0);
+            yield return new Size(-42, -84);
+            yield return new Size(84, -42);
+            yield return new Size(-1024, 768);
+            yield return new Size(-1600, 0);
         }
     }
 }
