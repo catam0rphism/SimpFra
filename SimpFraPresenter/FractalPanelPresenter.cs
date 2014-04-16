@@ -38,7 +38,7 @@ namespace SimpFraPresenter
         }
 
         public void Render()
-        {
+        {            
             view.FractalImage = Fractal.Render();
         }
     }

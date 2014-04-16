@@ -62,12 +62,6 @@ namespace SimpFraUI.Views
             {
                 ibCRe.ValueDouble = value.Value.Real;
                 ibCIm.ValueDouble = value.Value.Imaginary;
-
-                EventHandler temp = CenterChanged;
-                if (temp != null)
-                {
-                    temp(this,EventArgs.Empty);
-                }
             }
         }
         public Complex? Difference
@@ -83,12 +77,6 @@ namespace SimpFraUI.Views
             {
                 ibDRe.ValueDouble = value.Value.Real;
                 ibDIm.ValueDouble = value.Value.Imaginary;
-
-                EventHandler temp = DifferenceChanged;
-                if (temp != null)
-                {
-                    temp(this,EventArgs.Empty);
-                }
             }
         }
         Size? IComplexPlaneConfigureView.Size
@@ -108,12 +96,6 @@ namespace SimpFraUI.Views
                 {
                     ibW.ValueInt = value.Value.Width;
                     ibH.ValueInt = value.Value.Height;
-                }
-
-                EventHandler temp = SizeChanged;
-                if (temp != null)
-                {
-                    temp(this,EventArgs.Empty);
                 }
             }
         }

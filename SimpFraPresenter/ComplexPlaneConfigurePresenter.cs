@@ -22,15 +22,26 @@ namespace SimpFraPresenter
             }
         }
 
+        ComplexPlane _complexPlane = new ComplexPlane();
         [Ninject.Inject]
-        public ComplexPlane complexPlane { get; set; }
+        public ComplexPlane complexPlane
+        {
+            get { return _complexPlane; }
+            set
+            {
+                view.Center = value.Center;
+                view.Difference = value.Diff;
+                view.Size = value.Size;
+                _complexPlane = value;
+            }
+        }
 
         #region view events
         // Handle view events is setting model property
         void _view_SizeChanged(object sender, EventArgs e)
         {
             if (view.Size.HasValue && Math.Min(view.Size.Value.Width, view.Size.Value.Height) > 0)
-                complexPlane = complexPlane.Resize(view.Size.Value.Width, view.Size.Value.Height);
+                complexPlane = complexPlane.Resize(view.Size.Value);
         }
         void view_DifferenceChanged(object sender, EventArgs e)
         {

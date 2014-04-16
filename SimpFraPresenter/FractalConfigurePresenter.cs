@@ -32,8 +32,12 @@ namespace SimpFraPresenter
 
         void view_RenderClicked(object sender, EventArgs e)
         {
-            var cp = complexPlaneConfigurePresenter.complexPlane;
+
+            var cp = complexPlaneConfigurePresenter.complexPlane.Resize(fractalPanelPresenter.view.ImageSize);
+            complexPlaneConfigurePresenter.complexPlane = cp;
             fract.complexPlane = cp;
+
+
 
             fractalPanelPresenter.Fractal = fract;
             fractalPanelPresenter.Render();
