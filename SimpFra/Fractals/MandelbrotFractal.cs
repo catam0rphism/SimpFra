@@ -48,7 +48,9 @@ namespace SimpFra.Fractals
 
         public Color Colorize(int i)
         {
-            return Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
+            // return Color.FromArgb(2 * i % 255, 4 * i % 255, 8 % i % 255);
+            return i == Iteration ? Color.Black : Color.White; // WB fractal
+            // TODO: Colorize function with context
         }
 
         public int Generate(Complex c)
@@ -57,7 +59,7 @@ namespace SimpFra.Fractals
             Complex z = Complex.Zero;
             while (true)
             {
-                if (i == Iteration - 1 || Complex.Abs(z) >= 4)
+                if (i == Iteration || Complex.Abs(z) >= 4)
                     return i;
 
                 i++;
