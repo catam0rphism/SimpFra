@@ -66,11 +66,11 @@
     <Compile Include="Views\FractalConfigureView.Designer.cs">
       <DependentUpon>FractalConfigureView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FractalPanelView.cs">
+    <Compile Include="Views\FractalPanelView_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\FractalPanelView.Designer.cs">
-      <DependentUpon>FractalPanelView.cs</DependentUpon>
+    <Compile Include="Views\FractalPanelView_Control.Designer.cs">
+      <DependentUpon>FractalPanelView_Control.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FractalPanelView_Form.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="Views\FractalConfigureView.resx">
       <DependentUpon>FractalConfigureView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FractalPanelView.resx">
-      <DependentUpon>FractalPanelView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FractalPanelView_Control.resx">
+      <DependentUpon>FractalPanelView_Control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FractalPanelView_Form.resx">
       <DependentUpon>FractalPanelView_Form.cs</DependentUpon>

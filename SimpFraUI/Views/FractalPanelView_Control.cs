@@ -20,7 +20,8 @@ namespace SimpFraUI.Views
 
         public Bitmap FractalImage
         {
-            set { pictureBox.Image = value.Clone() as Image; }
+            get { return pictureBox.Image as Bitmap; }
+            set { pictureBox.Image = value; }
         }
 
         public TimeSpan RenderTime

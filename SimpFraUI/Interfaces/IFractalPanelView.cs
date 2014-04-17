@@ -12,7 +12,7 @@ namespace SimpFraUI.Interfaces
         :IView<SimpFra.IComplexFractal>
     {
         Size ImageSize { get; set; }
-        Bitmap FractalImage { set; }
+        Bitmap FractalImage { get; set; }
         TimeSpan RenderTime { set; }
 
         // TODO: Fractal moving events

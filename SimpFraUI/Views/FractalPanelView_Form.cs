@@ -32,6 +32,7 @@ namespace SimpFraUI.Views
 
         Bitmap IFractalPanelView.FractalImage
         {
+            get { return pictureBox1.Image as Bitmap; }
             set { pictureBox1.Image = value; }
         }
 
