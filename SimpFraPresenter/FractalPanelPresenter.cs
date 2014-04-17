@@ -28,18 +28,26 @@ namespace SimpFraPresenter
             }
         }
 
-        public async void RenderAsync()
-        {
-#warning Check timer!
-            System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
-            view.FractalImage = await Fractal.RenderAsync();
-            sw.Stop();
-            _view.RenderTime = sw.Elapsed;
-        }
+//        public async void RenderAsync()
+//        {
+//#warning Check timer!
+//            System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
+//            view.FractalImage = await Fractal.RenderAsync();
+//            sw.Stop();
+//            _view.RenderTime = sw.Elapsed;
+//        }
 
         public void Render()
-        {            
+        {
+            _view.Show();
+
+            _view.RenderTime = TimeSpan.FromSeconds(10);
+
+            var sw = System.Diagnostics.Stopwatch.StartNew();
             view.FractalImage = Fractal.Render();
+
+            sw.Stop();
+            _view.RenderTime = sw.Elapsed;
         }
     }
 }
