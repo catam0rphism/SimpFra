@@ -11,9 +11,9 @@ using SimpFraUI.Interfaces;
 
 namespace SimpFraUI.Views
 {
-    public partial class FractalPanelView : UserControl, IFractalPanelView
+    public partial class FractalPanelView_Control : UserControl, IFractalPanelView
     {
-        public FractalPanelView()
+        public FractalPanelView_Control()
         {
             InitializeComponent();
         }

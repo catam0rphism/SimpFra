@@ -1,6 +1,6 @@
 ﻿namespace SimpFraUI.Views
 {
-    partial class FractalPanelView
+    partial class FractalPanelView_Control
     {
         /// <summary> 
         /// Required designer variable.
