@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace SimpFraUI.Interfaces
 {
-    public interface IView<TModel> { }
+    public interface IView<TModel>
+    {
+        void Show();
+    }
 }

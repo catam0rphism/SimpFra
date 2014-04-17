@@ -28,7 +28,7 @@ namespace SimpFra
             appKernel.Bind<IComplexFractal>().ToConstant(mfr);
             appKernel.Bind<IComplexFractalConfigureView>().ToConstant(mainView);
             appKernel.Bind<IComplexPlaneConfigureView>().ToConstant(mainView.complexPlaneConfigureView);
-            appKernel.Bind<IFractalPanelView>().ToConstant(mainView.fractalPanelView);
+            appKernel.Bind<IFractalPanelView>().To<FractalPanelView_Form>();
 
             FractalConfigurePresenter presenter = appKernel.Get<FractalConfigurePresenter>();
 

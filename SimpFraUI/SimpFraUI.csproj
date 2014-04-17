@@ -72,6 +72,12 @@
     <Compile Include="Views\FractalPanelView.Designer.cs">
       <DependentUpon>FractalPanelView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FractalPanelView_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FractalPanelView_Form.Designer.cs">
+      <DependentUpon>FractalPanelView_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FractalPanelView.resx">
       <DependentUpon>FractalPanelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FractalPanelView_Form.resx">
+      <DependentUpon>FractalPanelView_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

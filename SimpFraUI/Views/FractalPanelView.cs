@@ -27,7 +27,7 @@ namespace SimpFraUI.Views
         {
             set
             {
-                toolStripStatusLabel.Text = "Render completed | " + value.Milliseconds.ToString() + "ms";
+                toolStripStatusLabel.Text = "Render completed | " + value.Milliseconds + "ms";
             }
         }
 
